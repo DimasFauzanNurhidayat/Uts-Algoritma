@@ -1,0 +1,105 @@
+# Uts-Algoritma
+Program Bank Sampah
+# Program Bank Sampah
+
+i=a=b=c=0
+
+print('                                 DAFTAR HARGA BANK SAMPAH                                       ')
+print('________________________________________________________________________________________________')
+print(' No  Nama Sampah                         Jumlah Sampah                                 Harga    ')
+print('________________________________________________________________________________________________')
+print(' A. KELOMPOK KERTAS DAN DUS')
+print('------------------------------------------------------------------------------------------------')
+print(' 1.  kertas seperti bekas arsip,                                                                ')
+print('     koran, kotak dus, dan                     1 Kg                                  Rp. 1.000,-')
+print('     bekas kertas bungkus semen                                                                 ')
+print(' 2.  Majalah Bekas                             1 unit                                Rp. 600,-  ')
+print(' 3.  Kertas Duplek/Dus Tipis                   1 unit                                Rp. 300,-  ')
+print('________________________________________________________________________________________________')
+print(' B. KELOMPOK BOTOL, GELAS, DAN BENDA PLASTIK')
+print('------------------------------------------------------------------------------------------------')
+print(' 1.  Gelas Plastik Tanpa Label                 1 Kg                                  Rp. 5.000,-')
+print(' 2.  Gelas plastik berlabel, mainan,                                                 Rp. 2.000,-')
+print('     bekas botol shampoo, emberan atau         1 Kg                                             ')
+print('     plastik kemasan yang bisa pecah,                                                           ')
+print('     serta toples kue kering                                                                    ')
+print(' 3.  Kelompok plastik bening, ember            1 Kg                                  Rp. 800,-  ')
+print('     atau pot hitam, serta pipa peralon (PVC)                                                   ')
+print(' 4.  Bekas tutup botol galon                   1 kg                                  Rp. 3.000,-')
+print(' 5.  Tutup botol plastik bening                1 Kg                                  Rp. 2.800,-')
+print(' 6.  Helm bekas, dispenser, dan                1 Kg                                  Rp. 300,-  ')
+print('     penanak nasi elektronik                                                                    ')
+print('________________________________________________________________________________________________')
+print(' C. KELOMPOK LOGAM')
+print('------------------------------------------------------------------------------------------------')
+print(' 1.  Panci alumunium                           1 Kg                                  Rp. 6.000,-')
+print(' 2.  Tembaga Bersih                            1 Kg                                  Rp. 36.000,-')
+print(' 3.  Besi                                      1 Kg                                  Rp. 1500,- ')
+print(' 4.  Kaleng dan Seng                           1 Kg                                  Rp. 600,-  ')
+print(' 5.  Stainless Steel                           1 Kg                                  Rp. 1.600,-')
+print('')
+print('')
+print('CATATAN BANK SAMPAH POLITEKNIK NEGERI SEMARANG')
+print('')
+print('')
+janissmph1=print('1. SAMPAH KERTAS')
+janissmph2=print('2. SAMPAH PLASTIK')
+janissmph3=print('3. SAMPAH LOGAM')
+print('')
+print('')
+namapenyetor=[]
+jnssmph=[]
+jmlhsmph=[]
+while True:
+    print('Masukan Data Ke-',i+1)
+    namapenyetor.append(input('Masukan Nama Penyetor Bank Sampah (Huruf Kecil Semua !) : '))
+    jnssmph.append(input('Memilih Jenis Sampah (1, 2, 3) : '))
+    if len (jnssmph[i])!=1:
+        print('Input Yang Anda Masukan Salah ! ')
+        print
+        namapenyetor.pop(i)
+        jnssmph.pop(i)
+        continue
+    jmlhsmph.append(jnssmph[i])
+    if jmlhsmph[i]=='1':
+        jmlhsmph[i]='Sampah Kertas'
+        a+=1
+    elif jmlhsmph[i]=='2':
+        jmlhsmph[i]='Sampah Plastik'
+        b+=1
+    elif jmlhsmph[i]=='3':
+        jmlhsmph[i]='Sampah Logam'
+        c+=1
+    else:
+        print('Input Salah ! ')
+        print
+        continue
+    lagi=''
+    while lagi!='y' and lagi!='t':
+        lagi=input('INPUT LAGI [y/t] : ')
+        i+=1
+    if lagi!='y':
+        break
+print('                         HASIL BANK SAMPAH                          ')
+print('--------------------------------------------------------------------')
+print('No   Nama Penyetor            Menyetor Jenis Sampah                 ')
+print('____________________________________________________________________')
+for n in range(i):
+    print(n+1,'     ',namapenyetor[n],'              ',jnssmph[n],'')
+print('Total Penyetor Sampah Kertas = ',a,'Orang\n')
+print('Total Pnyetor Sampah Plastik = ',b,'Orang\n')
+print('Total Penyetor Sampah Logam  = ',c,'Orang\n')
+imh=''
+while imh!='y' and imh!='t':
+    imh=input('Ingin Melihat Hasil [y/t] : ')
+if imh=='y':
+    cari=input('Cari berdasarkan Nama Pnyetor (Harus Sesuai Input) : ')
+    for n in range(i):
+        if cari==namapenyetor[n]:
+            print
+            print('Nama Penyetor   : ',namapenyetor[n])
+            print('Menyetor Sampah : ',jnssmph[n])
+            break
+        else:
+            print('Nama Yang Anda Masukan Tidak Sesuai')
+            break
